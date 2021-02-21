@@ -1,1 +1,2 @@
-print('Hi from Python!')
+import sys
+sys.argv()
