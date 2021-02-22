@@ -1,2 +1,3 @@
 import sys
-sys.argv()
+
+print("Username from extension:", str(sys.argv[1]))
