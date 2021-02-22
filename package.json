@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "tweazy",
   "version": "1.0.0",
   "description": "Twitter Sentiment Analysis",
   "main": "index.js",
@@ -22,6 +22,10 @@
     "url": "https://github.com/srilaasya/NLP-Hack/issues"
   },
   "homepage": "https://github.com/srilaasya/NLP-Hack#readme",
+  "engines": {
+    "node": "12.20.0",
+    "npm": "6.4.11"
+  },
   "dependencies": {
     "ejs": "^3.1.5",
     "express": "^4.17.1",
