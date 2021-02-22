@@ -13,11 +13,10 @@ app.use(
 	})
 );
 app.use(express.static(__dirname + "/public"));
-app.set("port", 8000);
 app.set("views", path);
 app.set("view engine", "ejs");
-app.listen(app.get("port"), () => {
-	console.info("App is running on port", app.get("port"));
+app.listen(process.env.PORT || 8000, () => {
+	console.info("App is running on port", process.env.PORT || 8000);
 });
 
 /*=============================================>>>>>
