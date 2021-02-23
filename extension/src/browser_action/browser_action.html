@@ -1,19 +1,22 @@
 <!DOCTYPE html>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+	crossorigin="anonymous"
+/>
 <style type="text/css">
 	#mainPopup {
 		padding: 10px;
 		height: 200px;
 		width: 400px;
-		font-family: 'Poppins', sans-serif;
-	}
-	h1 {
-		font-size: 2em;
+		font-family: "Poppins", sans-serif;
 	}
 </style>
 
 <div id="mainPopup">
-	<h1>Hey there!</h1>
-	<p>Welcome to Tweazy!</p>
-	<button id="getUsernames">Get usernames!</button>
+	<h1 id="greetings">Hey there!</h1>
+	<p id="printUsernames">Welcome to Tweazy!</p>
+	<button class="btn btn-primary" id="getUsernames">Get usernames!</button>
 </div>
 <script src="browser_action.js"></script>

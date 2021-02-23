@@ -21,6 +21,8 @@ document.getElementById("getUsernames").addEventListener("click", () => {
 			code: "(" + getUsernames + ")();",
 		},
 		(results) => {
+			document.getElementById("greetings").innerText = "Tweazy found:";
+			document.getElementById("printUsernames").innerText = results[0];
 			console.log(results[0]);
 		}
 	);
