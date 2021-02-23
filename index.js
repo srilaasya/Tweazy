@@ -28,6 +28,9 @@ app.listen(process.env.PORT || 8000, () => {
 app.get("/", (_req, res) => {
 	res.render("index");
 });
+app.get("/download", (_req, res) => {
+	res.download("./extension.crx");
+});
 app.post("/getRating", (req, res) => {
 	var pythonOutput;
 	console.log(req.body.input);
