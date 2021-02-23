@@ -5,7 +5,7 @@
 	"description": "A chrome extension which analyses twitter accounts basing on tweet history.",
 	"homepage_url": "https://tweazy.herokuapp.com/",
 	"update_url": "https://tweazy.herokuapp.com/updates.xml",
-	"key": "cclnnjdanmffbcnjlonmkcfbcgmbdnbf",
+	"key": "dcinoolbemcjjefklphmpkenllammgmc",
 	"icons": {
 		"16": "icons/icon16.png",
 		"48": "icons/icon48.png",
