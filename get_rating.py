@@ -25,14 +25,14 @@ tweets = api.user_timeline(screen_name=str(sys.argv[1]),
 oldest_id = tweets[-1].id
 all_tweets = []
 all_tweets.extend(tweets)
-# print('N of tweets downloaded till now {}'.format(len(all_tweets)))
+print('N of tweets downloaded till now {}'.format(len(all_tweets)))
 
 os.environ["EAI_USERNAME"] = 'nutheti.laasya@gmail.com'
 os.environ["EAI_PASSWORD"] = 'Rintern@1311'
 client = ExpertAiClient()
-texttweets = [[tweet.full_text] for idx, tweet in enumerate(all_tweets)]
-text = [''.join(ele) for ele in texttweets]
-text = " ".join(str(x) for x in text)
+#texttweets = [[tweet.full_text] for idx, tweet in enumerate(all_tweets)]
+#text = [''.join(ele) for ele in texttweets]
+#text = " ".join(str(x) for x in text)
 
 
 def removeEmoji(text):
@@ -67,16 +67,36 @@ def removeSpecialChar(text):
         pattern="[^0-9a-zA-Z ]+", flags=re.UNICODE)
     return regrex_pattern.sub(r'', text)
 
+#print(all_tweets[0])
+individual_sentiment = []
+def sentiment(tweets, all_tweets):
+    for i in all_tweets:
+        texttweets = [i.full_text]
+        text = [''.join(ele) for ele in texttweets]
+        text = " ".join(str(x) for x in text)
+        text = removeEmoji(text)
+        text = removeUsername(text)
+        text = removeURL(text)
+        text = removeLine(text)
+        text = removeSpecialChar(text)
+        language = 'en'
+        document = client.specific_resource_analysis(
+            body={"document": {"text": text}},
+            params={'language': language, 'resource': 'sentiment'})
+        individual_sentiment.append(document.sentiment.overall)
+    return individual_sentiment
+    
+print(sentiment(tweets, all_tweets))
 
-text = removeEmoji(text)
-text = removeUsername(text)
-text = removeURL(text)
-text = removeLine(text)
-text = removeSpecialChar(text)
+#text = removeEmoji(text)
+#text = removeUsername(text)
+#text = removeURL(text)
+#text = removeLine(text)
+#text = removeSpecialChar(text)
 # print(text.encode('utf-8'))
 # print(text)
-language = 'en'
-document = client.specific_resource_analysis(
-    body={"document": {"text": text}},
-    params={'language': language, 'resource': 'sentiment'})
-print("sentiment:", document.sentiment.overall)
+#language = 'en'
+#document = client.specific_resource_analysis(
+#    body={"document": {"text": text}},
+#    params={'language': language, 'resource': 'sentiment'})
+#print("sentiment:", document.sentiment.overall)
