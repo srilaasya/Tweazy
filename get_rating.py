@@ -9,10 +9,10 @@ import re
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 
-consumer_key = "IXCvf6WsTxR5JSsdusJHiyfIr"
-consumer_secret = "HCrCeUIKlBmQuCS2vjHQCWi8VgdfnSOBbmeRKCUl2NcUIK570t"
-access_token = "1303429505256574976-cy4Ck9Fa7yFG7p79QVL7oZywojInYG"
-access_token_secret = "5Quo4hc93EoSyHpCuTyESIRhg6ef3fA3xzZMZEK7HaJHO"
+consumer_key = "UoZMEibxQYz2SAZm4vRq0Z9xC"
+consumer_secret = "7Q7t9iFPBEoo80D1U6QhOj2ZsQYTWDDW4wfhpWIyJGooCCxGQc"
+access_token = "1303429505256574976-BpAsIYb8Fk3Eb6mOOqJSCcNxWEnMyA"
+access_token_secret = "PWH8ZMAjATof27sJdthAVlH5qEDlbwP3I15xn7sDuDE3j"
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
@@ -85,8 +85,31 @@ def sentiment(tweets, all_tweets):
             params={'language': language, 'resource': 'sentiment'})
         individual_sentiment.append(document.sentiment.overall)
     return individual_sentiment
-    
-print(sentiment(tweets, all_tweets))
+rate_list = sentiment(tweets, all_tweets)
+print(mean(rate_list)
+
+#neg_count = len(list(filter(lambda x: (x < 0), rate_list)))
+#pos_count = len(list(filter(lambda x: (x > 0), rate_list)))
+#neut_count = len(list(filter(lambda x: (x == 0), rate_list)))
+
+#print("Positive numbers in the list: ", pos_count)
+#print("Negative numbers in the list: ", neg_count)
+#print("Neutral numbers in the list: ", neut_count)
+
+#def visualize_sentiment(rate_list):
+#    positive = 0
+#    negative = 0
+#    neutral = 0
+#    for i in individual_sentiment:
+#        if i < 0.0:
+#            negative = negative + 1
+#        elif i > 0.0:
+#            positive = positive + 1
+#       elif i == 0.0:
+#            neutral = neutral + 1
+#    return [positive, negative, neutral]
+
+#print(visualize_sentiment(sentiment(tweets, all_tweets)))
 
 #text = removeEmoji(text)
 #text = removeUsername(text)
