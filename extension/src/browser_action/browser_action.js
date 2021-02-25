@@ -7,10 +7,10 @@ document.getElementById("getUsernames").addEventListener("click", () => {
 				"span.css-901oao.css-16my406.r-poiln3.r-bcqeeo.r-qvutc0"
 			)
 			.forEach((element) => {
-				if (element.innerText.match("@[A-Za-z0-9w]+"))
+				if (element.innerText.match("^@[a-zA-Z0-9_]{0,15}$"))
 					usernames.push(
 						element.innerText
-							.match("@[A-Za-z0-9w]+")[0]
+							.match("^@[a-zA-Z0-9_]{0,15}")[0]
 							.substring(1)
 					);
 			});
@@ -34,9 +34,9 @@ document.getElementById("getUsernames").addEventListener("click", () => {
 				btn.classList.add("btn-primary");
 				document.getElementById("printUsernames").appendChild(document.createElement("BR"));
 				document.getElementById("printUsernames").appendChild(btn);
-				
+
 			})
-			
+
 		}
 	);
 });
