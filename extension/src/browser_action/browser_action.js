@@ -34,9 +34,21 @@ document.getElementById("getUsernames").addEventListener("click", () => {
 			usernames[0].forEach(() => {
 				let btn = document.createElement("button");
 				btn.innerHTML = usernames[0][check++];
-				btn.classList.add("btn", "btn-outline-primary");
+				btn.classList.add(
+					"btn",
+					"btn-outline-primary",
+					"usernameButton"
+				);
 				div.appendChild(btn);
 			});
+			document
+				.querySelectorAll("button.usernameButton")
+				.forEach((ele) => {
+					ele.addEventListener("click", () => {
+						console.log(ele.innerText);
+
+					});
+				});
 		}
 	);
 });
