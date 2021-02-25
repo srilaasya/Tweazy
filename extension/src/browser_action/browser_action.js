@@ -28,14 +28,14 @@ document.getElementById("getUsernames").addEventListener("click", () => {
 			code: "(" + getUsernames + ")();",
 		},
 		(results) => {
-			var check = 0;
+			let check = 0;
 			document.getElementById("greetings").innerText = "Tweazy found:";
 			document.getElementById("getUsernames").hidden = true;
-			var p = document.createElement("p");
+			let p = document.createElement("p");
 			p.innerText = "Click any username to analyze";
 			document.getElementById("printUsernames").appendChild(p);
 			results[0].forEach((res) => {
-				var btn = document.createElement("BUTTON");
+				let btn = document.createElement("BUTTON");
 				btn.innerHTML = results[0][check++];
 				btn.style.marginBottom = "10px";
 				btn.classList.add("btn");

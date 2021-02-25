@@ -32,7 +32,7 @@ app.get("/download", (_req, res) => {
 	res.download("./extension.crx");
 });
 app.post("/getRating", (req, res) => {
-	var pythonOutput;
+	let pythonOutput;
 	console.log(req.body.input);
 	const python = spawn("python", ["get_rating.py", req.body.input]);
 	python.stdout.on("data", (data) => {
