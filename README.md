@@ -19,9 +19,9 @@ A web app & a chrome extension which analyzes twitter accounts basing on tweet h
 - Download the extension from- 
 - You should be downloading a zip file. Unzip it
 - Open Google Chrome and click on the extensions icon
-- Click on 'Manage Extensions' at the end of the pop up
-- Turn on the 'Developer Mode' on the top right corner.
-- Now select 'Load Unpacked' from the left corner and select the 'extension' folder fro the unzipped file you downloaded
+- Click on `Manage Extensions` at the end of the pop up
+- Turn on the `Developer Mode` on the top right corner.
+- Now select `Load Unpacked` from the left corner and select the `extension` folder from the unzipped file you downloaded
 - You should be able to see Tweazy extension now
 
 ## :star: Usage
