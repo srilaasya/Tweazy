@@ -6,14 +6,12 @@ A web app & a chrome extension which analyzes twitter accounts basing on tweet h
 
 ## :star: APIs, libraries and frameworks
 - Tweepy- For scraping twitter data
-- Expert.ai- For data analysis
+- Expert.ai- For sentiment analysis
 
-## :star: Features (ML)
-- Identify twwitter handles on screen
-- Extract text from tweets of selected handles (both data and images)
-- Analyze and classify the tweets
-- Give a detailed report of the twitter handle
+## :star: Working of Tweazy
+- Identifies twwitter handles on screen
+- Extracts text from 50 latest tweets of selected user handle
+- Performs sentiment analysis and returns an overall sentiment score along with a sentiment graph showing number of positive, neutral and negative tweets
+- Gives additional insights on on the number of followers and friends, and the time at which the account was created
 
-## :star: Features (Front-end)
-- A pop-up displaying the identified twitter handles as a checkbox with an analyse button
-- Display analysis when clicked on the analyse button
+## :star: Installation and usage
