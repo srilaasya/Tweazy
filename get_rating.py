@@ -1,24 +1,26 @@
 from pandas import DataFrame
-from expertai.nlapi.cloud.client import ExpertAiClient
-import os
-import sys
-import tweepy
-import pandas as pd
-import numpy as np
-import re
-import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 from dotenv import load_dotenv
+from expertai.nlapi.cloud.client import ExpertAiClient
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import os
+import sys
+import re
+import tweepy
+
+# Load and set environment variables
 load_dotenv()
 
-#Auth
-consumer_key = os.getenv("consumer_key")
-consumer_secret = os.getenv("consumer_secret")
-access_token = os.getenv("access_token")
-access_token_secret = os.getenv("access_token_secret")
+# Load NLP API
+client = ExpertAiClient()
 
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
+# Authenticate and fetch tweets
+auth = tweepy.OAuthHandler(os.getenv("consumer_key"),
+                           os.getenv("consumer_secret"))
+auth.set_access_token(os.getenv("access_token"),
+                      os.getenv("access_token_secret"))
 api = tweepy.API(auth)
 #print("Username from extension:", str(sys.argv[1]))
 tweets = api.user_timeline(screen_name=str(sys.argv[1]),
@@ -29,12 +31,11 @@ tweets = api.user_timeline(screen_name=str(sys.argv[1]),
 oldest_id = tweets[-1].id
 all_tweets = []
 all_tweets.extend(tweets)
-#print('N of tweets downloaded till now {}'.format(len(all_tweets)))
+#print('Number of tweets downloaded till now {}'.format(len(all_tweets)))
 
-#ExpertNLP api
-client = ExpertAiClient()
+# Clean text
 
-#Clean text
+
 def removeEmoji(text):
     regrex_pattern = re.compile(pattern="["
                                 u"\U0001F600-\U0001F64F"  # emoticons
@@ -66,10 +67,13 @@ def removeSpecialChar(text):
     regrex_pattern = re.compile(
         pattern="[^0-9a-zA-Z ]+", flags=re.UNICODE)
     return regrex_pattern.sub(r'', text)
-#print(all_tweets[0])
+# print(all_tweets[0])
 
-#Individual sentiment of tweets
+
+# Individual sentiment of tweets
 individual_sentiment = []
+
+
 def sentiment(tweets, all_tweets):
     for i in all_tweets:
         texttweets = [i.full_text]
@@ -86,14 +90,16 @@ def sentiment(tweets, all_tweets):
             params={'language': language, 'resource': 'sentiment'})
         individual_sentiment.append(document.sentiment.overall)
     return individual_sentiment
+
+
 rate_list = sentiment(tweets, all_tweets)
 
-#No. of neg, pos, neut tweets
+# No. of neg, pos, neutral tweets
 neg_count = len(list(filter(lambda x: (x < 0), rate_list)))
 pos_count = len(list(filter(lambda x: (x > 0), rate_list)))
-neut_count = len(list(filter(lambda x: (x == 0), rate_list)))
+neutral_count = len(list(filter(lambda x: (x == 0), rate_list)))
 
-#Overall sentiment of the tweets
+# Overall sentiment of the tweets
 texttweets = [[tweet.full_text] for idx, tweet in enumerate(all_tweets)]
 text = [''.join(ele) for ele in texttweets]
 text = " ".join(str(x) for x in text)
@@ -102,25 +108,16 @@ text = removeUsername(text)
 text = removeURL(text)
 text = removeLine(text)
 text = removeSpecialChar(text)
-#print(text.encode('utf-8'))
-#print(text)
-language = 'en'
+# print(text.encode('utf-8'))
+# print(text)
 document = client.specific_resource_analysis(
     body={"document": {"text": text}},
-    params={'language': language, 'resource': 'sentiment'})
+    params={'language': 'en', 'resource': 'sentiment'})
 
 
-#User Details
+# User Details
 user = api.get_user(sys.argv[1])
-#User name
-print(user.name)
-#Account created at
-print(str(user.created_at))
-#Follower count
-print(str(user.followers_count))
-#Friends count (No. of people the user is following)
-print(str(user.friends_count))
-#Individual sentiment (positive, negative and neutral tweet count)
-print(pos_count, neg_count, neut_count)
-#Overall sentiment of the account
-print(document.sentiment.overall)
+# User name
+output = {'username': user.name, 'joined': user.created_at, 'followers': user.followers_count, 'following':  user.friends_count,
+          'positive': pos_count, 'negative': neg_count, 'neutral': neutral_count, 'overall': document.sentiment.overall}
+print(output)
