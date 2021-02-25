@@ -9,22 +9,31 @@
 	#mainPopup {
 		padding: 10px;
 		/* height: 200px; */
-		width: 400px;
+		width: 100%;
 		font-family: "Poppins", sans-serif;
 		background-color: #fff;
 		color: #6200ee;
 	}
 	@media (prefers-color-scheme: dark) {
-      #mainPopup {
-		background-color: #121212;
-		color: #bb86fc;
+		#mainPopup {
+			background-color: #121212;
+			color: #bb86fc;
+		}
 	}
-    }
+	*::-webkit-scrollbar {
+		width: 12px;
+		background-color: #f5f5f5;
+	}
+	*::-webkit-scrollbar-thumb {
+		border-radius: 10px;
+		box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+		background-color: #4285f4;
+	}
 </style>
 
 <div id="mainPopup">
-	<h1 id="greetings">Hey there!</h1>
-	<p id="printUsernames">Welcome to Tweazy!</p>
+	<h1 id="tweazyHeading">Hey there!</h1>
+	<p id="tweazyBody">Welcome to Tweazy!</p>
 	<button class="btn btn-primary" id="getUsernames">Get usernames!</button>
 </div>
 <script src="browser_action.js"></script>

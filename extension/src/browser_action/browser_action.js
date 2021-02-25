@@ -23,14 +23,14 @@ document.getElementById("getUsernames").addEventListener("click", () => {
 		(usernames) => {
 			let check = 0;
 			document.getElementById(
-				"greetings"
+				"tweazyHeading"
 			).innerText = `Tweazy has found ${usernames[0].length}`;
-			document.getElementById("printUsernames").innerText =
+			document.getElementById("tweazyBody").innerText =
 				"Click any username to analyze:";
 			document.getElementById("getUsernames").hidden = true;
 			let div = document.createElement("div");
 			div.classList.add("d-grid", "gap-2", "d-md-block");
-			document.getElementById("printUsernames").appendChild(div);
+			document.getElementById("tweazyBody").appendChild(div);
 			usernames[0].forEach(() => {
 				let btn = document.createElement("button");
 				btn.innerHTML = usernames[0][check++];
