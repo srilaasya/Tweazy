@@ -58,21 +58,21 @@ document.getElementById("getUsernames").addEventListener("click", () => {
 
 				var liForPositive = document.createElement("li");
 				liForPositive.classList.add("bar", "success");
-				liForPositive.style.height = (pos / 50) * 100 + "%";
+				liForPositive.style.height = (pos / pos+neg+neutral) * 100 + "%";
 				var divPos = document.createElement("div");
 				divPos.innerText = "positive - " + pos;
 				liForPositive.appendChild(divPos);
 
 				var liForNegative = document.createElement("li");
 				liForNegative.classList.add("bar", "alert");
-				liForNegative.style.height = (neg / 50) * 100 + "%";
+				liForNegative.style.height = (neg / pos+neg+neutral) * 100 + "%";
 				var divNeg = document.createElement("div");
 				divNeg.innerText = "Negative - " + neg;
 				liForNegative.appendChild(divNeg);
 
 				var liForNeutral = document.createElement("li");
 				liForNeutral.classList.add("bar", "warning");
-				liForNeutral.style.height = (neutral / 50) * 100 + "%";
+				liForNeutral.style.height = (neutral / pos+neg+neutral) * 100 + "%";
 				var divNeu = document.createElement("div");
 				divNeu.innerText = "Neutral - " + neutral;
 				liForNeutral.appendChild(divNeu);
