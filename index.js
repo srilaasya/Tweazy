@@ -19,6 +19,7 @@ app.listen(process.env.PORT || 8000, () => {
 	console.info("App is running on port", process.env.PORT || 8000);
 });
 
+
 /*=============================================>>>>>
 
 				= Basic routes =
@@ -32,8 +33,14 @@ app.get("/download", (_req, res) => {
 	res.download("./extension.crx");
 });
 app.post("/getRating", (req, res) => {
+	res.header(
+		"Access-Control-Allow-Origin",
+		"*"
+	);
 	let pythonOutput;
-	console.log(req.body.username)
+	console.log("body",req.body)
+	console.log("param",req.params)
+	console.log("query",req.query)
 	const python = spawn("python", ["get_rating.py", req.body.username]);
 	python.stdout.on("data", (data) => {
 		pythonOutput = data.toString();
