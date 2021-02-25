@@ -3,7 +3,7 @@
 
 ## :star: Objective
 
-A web app & a chrome extension which analyzes twitter accounts basing on tweet history.
+A web app & a chrome extension which analyzes twitter accounts basing on tweet history
 
 ## :star: APIs, libraries and frameworks
 - Tweepy- For scraping twitter data
@@ -15,5 +15,17 @@ A web app & a chrome extension which analyzes twitter accounts basing on tweet h
 - Performs sentiment analysis and returns an overall sentiment score along with a sentiment graph showing number of positive, neutral and negative tweets
 - Gives additional insights on on the number of followers and friends, and the time at which the account was created
 
-## :star: Installation and usage
-- 
+## :star: Installation
+- Download the extension from- 
+- You should be downloading a zip file. Unzip it
+- Open Google Chrome and click on the extensions icon
+- Click on 'Manage Extensions' at the end of the pop up
+- Turn on the 'Developer Mode' on the top right corner.
+- Now select 'Load Unpacked' from the left corner and select the 'extension' folder fro the unzipped file you downloaded
+- You should be able to see Tweazy extension now
+
+## :star: Usage
+- Open up any twitter page
+- Click on the extension
+- Select the username you wish to analyze
+- Voila! On the screen are your results!
