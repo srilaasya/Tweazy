@@ -1,10 +1,5 @@
-from pandas import DataFrame
-from wordcloud import WordCloud
 from dotenv import load_dotenv
 from expertai.nlapi.cloud.client import ExpertAiClient
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
 import os
 import sys
 import re
