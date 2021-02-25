@@ -118,6 +118,7 @@ document = client.specific_resource_analysis(
 # User Details
 user = api.get_user(sys.argv[1])
 # User name
-output = {'username': user.name, 'joined': user.created_at, 'followers': user.followers_count, 'following':  user.friends_count,
+print(user)
+output = {'username': user.name, 'joined': user.created_at.ctime(), 'followers': user.followers_count, 'following':  user.friends_count,
           'positive': pos_count, 'negative': neg_count, 'neutral': neutral_count, 'overall': document.sentiment.overall}
 print(output)
