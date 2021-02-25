@@ -4,6 +4,7 @@ import os
 import sys
 import re
 import tweepy
+import json
 
 # Load and set environment variables
 load_dotenv()
@@ -113,4 +114,4 @@ document = client.specific_resource_analysis(
 user = api.get_user(sys.argv[1])
 output = {'username': user.name, 'joined': user.created_at.ctime(), 'followers': user.followers_count, 'following':  user.friends_count,
           'positive': pos_count, 'negative': neg_count, 'neutral': neutral_count, 'overall': document.sentiment.overall}
-print(output)
+print(json.dumps(output))
