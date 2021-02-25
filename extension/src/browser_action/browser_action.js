@@ -50,7 +50,7 @@ document.getElementById("getUsernames").addEventListener("click", () => {
 				innerDiv.appendChild(joined);
 				innerDiv.appendChild(document.createElement("br"));
 				innerDiv.appendChild(Followers);
-				innerDiv.appendChild(OverallRating)
+				innerDiv.appendChild(OverallRating);
 				bodyDiv.appendChild(innerDiv);
 
 				var outer = document.createElement("ul");
