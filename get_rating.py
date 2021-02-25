@@ -108,17 +108,14 @@ text = removeUsername(text)
 text = removeURL(text)
 text = removeLine(text)
 text = removeSpecialChar(text)
-# print(text.encode('utf-8'))
 # print(text)
 document = client.specific_resource_analysis(
     body={"document": {"text": text}},
     params={'language': 'en', 'resource': 'sentiment'})
 
 
-# User Details
+# Get user details
 user = api.get_user(sys.argv[1])
-# User name
-print(user)
 output = {'username': user.name, 'joined': user.created_at.ctime(), 'followers': user.followers_count, 'following':  user.friends_count,
           'positive': pos_count, 'negative': neg_count, 'neutral': neutral_count, 'overall': document.sentiment.overall}
 print(output)
