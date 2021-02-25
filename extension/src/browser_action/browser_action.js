@@ -22,21 +22,20 @@ document.getElementById("getUsernames").addEventListener("click", () => {
 		},
 		(usernames) => {
 			let check = 0;
-			document.getElementById("greetings").innerText = "Tweazy found:";
+			document.getElementById(
+				"greetings"
+			).innerText = `Tweazy has found ${usernames[0].length}`;
+			document.getElementById("printUsernames").innerText =
+				"Click any username to analyze:";
 			document.getElementById("getUsernames").hidden = true;
-			let p = document.createElement("p");
-			p.innerText = "Click any username to analyze";
-			document.getElementById("printUsernames").appendChild(p);
-			usernames[0].forEach((res) => {
+			let div = document.createElement("div");
+			div.classList.add("d-grid", "gap-2", "d-md-block");
+			document.getElementById("printUsernames").appendChild(div);
+			usernames[0].forEach(() => {
 				let btn = document.createElement("button");
 				btn.innerHTML = usernames[0][check++];
-				btn.style.marginBottom = "10px";
-				btn.classList.add("btn");
-				btn.classList.add("btn-outline-primary");
-				document
-					.getElementById("printUsernames")
-					.appendChild(document.createElement("BR"));
-				document.getElementById("printUsernames").appendChild(btn);
+				btn.classList.add("btn", "btn-outline-primary");
+				div.appendChild(btn);
 			});
 		}
 	);
