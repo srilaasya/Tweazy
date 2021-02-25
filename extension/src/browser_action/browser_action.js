@@ -45,8 +45,50 @@ document.getElementById("getUsernames").addEventListener("click", () => {
 				.querySelectorAll("button.usernameButton")
 				.forEach((ele) => {
 					ele.addEventListener("click", () => {
-						console.log(ele.innerText);
-
+						fetch("https://tweazy.herokuapp.com/getRating", {
+							method: "post",
+							headers: {
+								"Content-type":
+									"application/x-www-form-urlencoded; charset=UTF-8",
+							},
+							body: "username=n_sri_laasya",
+						})
+							.then((response) => {
+								if (response.status === 200) {
+									return response.json();
+								} else {
+									throw new Error(
+										"Something went wrong on api server!"
+									);
+								}
+							})
+							.then((response) => {
+								console.debug(response);
+								// ...
+							})
+							.catch((error) => {
+								console.error(error);
+							});
+						// fetch("/getRating", {
+						// 					method: "POST",
+						// 					body: '{"username": ele.innerText}'
+						// 				})
+						// 					.then(function(response) {
+						// 						if (response.status !== 200) {
+						// 							alert(
+						// 								"Looks like there was a problem. Status Code: " +
+						// 									response.status
+						// 							);
+						// 							return;
+						// 						}
+						// 						response.json().then(function(data) {
+						// 							console.log(data)
+						// 						});
+						// 					})
+						// 					.catch(function(err) {
+						// 						alert("Fetch Error :-S", err);
+						// 					});
+						// 			});
 					});
 				});
 		}
