@@ -6,7 +6,6 @@ A web app & a chrome extension which analyzes twitter accounts basing on tweet h
 
 ## :star: APIs, libraries and frameworks
 - Tweepy- For scraping twitter data
-- OpenCV- For extracting data from images
 - Expert.ai- For data analysis
 
 ## :star: Features (ML)
