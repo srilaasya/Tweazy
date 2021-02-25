@@ -42,13 +42,15 @@ document.getElementById("getUsernames").addEventListener("click", () => {
 				var Followers = document.createElement("h5");
 				Followers.innerText =
 					"Followers " + followers + " " + "Following " + following;
-
+				var OverallRating = document.createElement("h5");
+				OverallRating.innerText = overall;
 				var innerDiv = document.createElement("div");
 				innerDiv.appendChild(Name);
 				innerDiv.appendChild(document.createElement("br"));
 				innerDiv.appendChild(joined);
 				innerDiv.appendChild(document.createElement("br"));
 				innerDiv.appendChild(Followers);
+				innerDiv.appendChild(OverallRating)
 				bodyDiv.appendChild(innerDiv);
 
 				var outer = document.createElement("ul");
