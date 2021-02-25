@@ -3,7 +3,7 @@
 
 ## :star: Objective
 
-A web app & a chrome extension which analyzes twitter accounts basing on tweet history
+A chrome extension downloadable through a website which helps you analyze twitter accounts based on the content and history with real-time sentiment analysis on tweets
 
 ## :star: APIs, libraries and frameworks
 - Tweepy- For scraping twitter data
