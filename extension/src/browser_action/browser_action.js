@@ -30,15 +30,16 @@ document.getElementById("getUsernames").addEventListener("click", () => {
 		(results) => {
 			var check = 0;
 			document.getElementById("greetings").innerText = "Tweazy found:";
-			var p = document.createElement("P");
-			p.innerText = "Click on Username to analyze";
+			document.getElementById("getUsernames").hidden = true;
+			var p = document.createElement("p");
+			p.innerText = "Click any username to analyze";
 			document.getElementById("printUsernames").appendChild(p);
 			results[0].forEach((res) => {
 				var btn = document.createElement("BUTTON");
 				btn.innerHTML = results[0][check++];
 				btn.style.marginBottom = "10px";
 				btn.classList.add("btn");
-				btn.classList.add("btn-primary");
+				btn.classList.add("btn-outline-primary");
 				document
 					.getElementById("printUsernames")
 					.appendChild(document.createElement("BR"));
