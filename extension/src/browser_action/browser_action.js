@@ -52,34 +52,29 @@ document.getElementById("getUsernames").addEventListener("click", () => {
 				innerDiv.appendChild(Followers);
 				innerDiv.appendChild(OverallRating);
 				bodyDiv.appendChild(innerDiv);
-
 				var outer = document.createElement("ul");
 				outer.classList.add("bar-graph");
-
 				var liForPositive = document.createElement("li");
 				liForPositive.classList.add("bar", "success");
 				liForPositive.style.height =
 					(pos / pos + neg + neutral) * 100 + 200 + "px";
 				var divPos = document.createElement("div");
-				divPos.innerText = "positive - " + pos;
+				divPos.innerText = "positive" + pos;
 				liForPositive.appendChild(divPos);
-
 				var liForNegative = document.createElement("li");
 				liForNegative.classList.add("bar", "alert");
 				liForNegative.style.height =
 					(neg / pos + neg + neutral) * 100 + 200 + "px";
 				var divNeg = document.createElement("div");
-				divNeg.innerText = "Negative - " + neg;
+				divNeg.innerText = "Negative" + neg;
 				liForNegative.appendChild(divNeg);
-
 				var liForNeutral = document.createElement("li");
 				liForNeutral.classList.add("bar", "warning");
 				liForNeutral.style.height =
 					(neutral / pos + neg + neutral) * 100 + 200 + "px";
 				var divNeu = document.createElement("div");
-				divNeu.innerText = "Neutral - " + neutral;
+				divNeu.innerText = "Neutral" + neutral;
 				liForNeutral.appendChild(divNeu);
-
 				outer.appendChild(liForPositive);
 				outer.appendChild(liForNegative);
 				outer.appendChild(liForNeutral);
