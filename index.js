@@ -46,7 +46,7 @@ app.post("/getRating", (req, res) => {
 	python.on("close", (code) => {
 		console.log(`Python exit code: ${code}`);
 		console.log(pythonOutput);
-		res.json(pythonOutput);
+		res.send(pythonOutput);
 	});
 });
 
