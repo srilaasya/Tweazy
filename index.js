@@ -33,8 +33,8 @@ app.get("/download", (_req, res) => {
 });
 app.post("/getRating", (req, res) => {
 	let pythonOutput;
-	console.log(req.body.input);
-	const python = spawn("python", ["get_rating.py", req.body.input]);
+	console.log(req.body.username)
+	const python = spawn("python", ["get_rating.py", req.body.username]);
 	python.stdout.on("data", (data) => {
 		pythonOutput = data.toString();
 	});
