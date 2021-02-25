@@ -8,11 +8,18 @@ document.getElementById("getUsernames").addEventListener("click", () => {
 			)
 			.forEach((element) => {
 				if (element.innerText.match("^@[a-zA-Z0-9_]{0,15}$"))
-					usernames.push(
-						element.innerText
-							.match("^@[a-zA-Z0-9_]{0,15}")[0]
-							.substring(1)
-					);
+					if (
+						!usernames.includes(
+							element.innerText
+								.match("^@[a-zA-Z0-9_]{0,15}")[0]
+								.substring(1)
+						)
+					)
+						usernames.push(
+							element.innerText
+								.match("^@[a-zA-Z0-9_]{0,15}")[0]
+								.substring(1)
+						);
 			});
 		return usernames;
 	}
@@ -21,22 +28,22 @@ document.getElementById("getUsernames").addEventListener("click", () => {
 			code: "(" + getUsernames + ")();",
 		},
 		(results) => {
-			var check=0;
+			var check = 0;
 			document.getElementById("greetings").innerText = "Tweazy found:";
-			var p=document.createElement("P");
-			p.innerText="Click on Username to analyze";
+			var p = document.createElement("P");
+			p.innerText = "Click on Username to analyze";
 			document.getElementById("printUsernames").appendChild(p);
-			results[0].forEach((res)=>{
+			results[0].forEach((res) => {
 				var btn = document.createElement("BUTTON");
-				btn.innerHTML=results[0][check++];
-				btn.style.marginBottom="10px";
+				btn.innerHTML = results[0][check++];
+				btn.style.marginBottom = "10px";
 				btn.classList.add("btn");
 				btn.classList.add("btn-primary");
-				document.getElementById("printUsernames").appendChild(document.createElement("BR"));
+				document
+					.getElementById("printUsernames")
+					.appendChild(document.createElement("BR"));
 				document.getElementById("printUsernames").appendChild(btn);
-
-			})
-
+			});
 		}
 	);
 });
