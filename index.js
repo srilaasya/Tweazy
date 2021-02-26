@@ -30,7 +30,7 @@ app.get("/", (_req, res) => {
 	res.render("index");
 });
 app.get("/download", (_req, res) => {
-	res.download("./extension.crx");
+	res.redirect("https://github.com/srilaasya/Tweazy/archive/main.zip");
 });
 app.post("/getRating", (req, res) => {
 	res.header(
