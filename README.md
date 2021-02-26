@@ -3,11 +3,12 @@
 
 ## :star: Objective
 
-An extension downloadable through our website which helps you analyze twitter accounts based on the content and history with real-time sentiment analysis on tweets
+An extension downloadable through our [website](https://tweazy.herokuapp.com) which helps you analyze twitter accounts based on the content and history with real-time sentiment analysis on tweets
 
 ## :star: APIs, libraries and frameworks
 - Tweepy- For scraping twitter data
 - Expert.ai- For sentiment analysis
+- Express.js - Back-end server
 
 ## :star: Working of Tweazy
 - Identifies twwitter handles on screen
@@ -16,8 +17,8 @@ An extension downloadable through our website which helps you analyze twitter ac
 - Gives additional insights on on the number of followers and friends, and the time at which the account was created
 
 ## :star: Installation
-- Download the extension from- https://tweazy.herokuapp.com
-- You should be downloading a zip file. Unzip it
+- Download the extension from [here](https://tweazy.herokuapp.com).
+- Unzip the file once downloaded.
 - Open Google Chrome and click on the extensions icon
 - Click on `Manage Extensions` at the end of the pop up
 - Turn on the `Developer Mode` on the top right corner.
