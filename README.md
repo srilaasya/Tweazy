@@ -16,7 +16,7 @@ An extension downloadable through a website which helps you analyze twitter acco
 - Gives additional insights on on the number of followers and friends, and the time at which the account was created
 
 ## :star: Installation
-- Download the extension from- https://github.com/srilaasya/Tweazy/archive/main.zip
+- Download the extension from- https://tweazy.herokuapp.com
 - You should be downloading a zip file. Unzip it
 - Open Google Chrome and click on the extensions icon
 - Click on `Manage Extensions` at the end of the pop up
