@@ -24,7 +24,7 @@ An extension downloadable through our [website](https://tweazy.herokuapp.com) wh
 ## :star: Extension installation
 - Download the extension from [here](https://tweazy.herokuapp.com).
 - Unzip the file once downloaded and take note of the location.
-- Open Google Chrome and go to `chrome://extensions`.
+- Open Google Chrome or Microsoft Edge and go to `chrome://extensions` or `edge://extensions` respectively.
 - Turn on the `Developer Mode` on the top right corner.
 - Now select `Load Unpacked` from the left corner and select the `extension` folder from the unzipped file you downloaded.
 - You should be able to see Tweazy extension now.
