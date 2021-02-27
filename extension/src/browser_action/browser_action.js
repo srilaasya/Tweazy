@@ -41,7 +41,7 @@ document.getElementById("getUsernames").addEventListener("click", () => {
 				joined.innerText = "Joined on: " + date;
 				var Followers = document.createElement("h5");
 				Followers.innerText =
-					"Followers: " + followers 
+					"Followers: " + followers
 				var Following = document.createElement("h5");
 				Following.innerText = "Following: " + following;
 				var OverallRating = document.createElement("h5");
@@ -52,7 +52,6 @@ document.getElementById("getUsernames").addEventListener("click", () => {
 				Name.innerText = "Negative: " + neg;
 				var Neutral = document.createElement("h4");
 				Name.innerText = "Neutral: " + neutral;
-
 				var innerDiv = document.createElement("div");
 				innerDiv.appendChild(Name);
 				innerDiv.appendChild(document.createElement("br"));
@@ -105,7 +104,7 @@ document.getElementById("getUsernames").addEventListener("click", () => {
 				outer.appendChild(liForNeutral);
 				bodyDiv.appendChild(outer);*/
 
-				
+
 
 			}
 			let check = 0;
