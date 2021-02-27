@@ -36,20 +36,22 @@ document.getElementById("getUsernames").addEventListener("click", () => {
 					bodyDiv.removeChild(bodyDiv.firstChild);
 				}
 				var Name = document.createElement("h4");
-				Name.innerText = "UserName - " + userName;
+				Name.innerText = "UserName: " + userName;
 				var joined = document.createElement("h5");
-				joined.innerText = "Joined on - " + date;
+				joined.innerText = "Joined on: " + date;
 				var Followers = document.createElement("h5");
 				Followers.innerText =
-					"Followers - " + followers + " " + "Following " + following;
+					"Followers: " + followers 
+				var Following = document.createElement("h5");
+				Following.innerText = "Following: " + following;
 				var OverallRating = document.createElement("h5");
-				OverallRating.innerText = "Overall - "+overall;
+				OverallRating.innerText = "Overall Sentiment Score: "+overall;
 				var Positive = document.createElement("h4");
-				Name.innerText = "Positive Value - " + pos;
+				Name.innerText = "Positive: " + pos;
 				var Negative = document.createElement("h4");
-				Name.innerText = "Negative Value - " + neg;
+				Name.innerText = "Negative: " + neg;
 				var Neutral = document.createElement("h4");
-				Name.innerText = "Neutral Value - " + neutral;
+				Name.innerText = "Neutral: " + neutral;
 
 				var innerDiv = document.createElement("div");
 				innerDiv.appendChild(Name);
@@ -59,6 +61,9 @@ document.getElementById("getUsernames").addEventListener("click", () => {
 				innerDiv.appendChild(document.createElement("br"));
 				innerDiv.appendChild(document.createElement("br"));
 				innerDiv.appendChild(Followers);
+				innerDiv.appendChild(document.createElement("br"));
+				innerDiv.appendChild(document.createElement("br"));
+				innerDiv.appendChild(Following);
 				innerDiv.appendChild(document.createElement("br"));
 				innerDiv.appendChild(document.createElement("br"));
 				innerDiv.appendChild(OverallRating);
