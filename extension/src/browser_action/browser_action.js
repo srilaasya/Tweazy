@@ -36,23 +36,43 @@ document.getElementById("getUsernames").addEventListener("click", () => {
 					bodyDiv.removeChild(bodyDiv.firstChild);
 				}
 				var Name = document.createElement("h4");
-				Name.innerText = "User Name " + userName;
+				Name.innerText = "UserName - " + userName;
 				var joined = document.createElement("h5");
-				joined.innerText = "Joined on " + date;
+				joined.innerText = "Joined on - " + date;
 				var Followers = document.createElement("h5");
 				Followers.innerText =
-					"Followers " + followers + " " + "Following " + following;
+					"Followers - " + followers + " " + "Following " + following;
 				var OverallRating = document.createElement("h5");
-				OverallRating.innerText = overall;
+				OverallRating.innerText = "Overall - "+overall;
+				var Positive = document.createElement("h4");
+				Name.innerText = "Positive Value - " + pos;
+				var Negative = document.createElement("h4");
+				Name.innerText = "Negative Value - " + neg;
+				var Neutral = document.createElement("h4");
+				Name.innerText = "Neutral Value - " + neutral;
+
 				var innerDiv = document.createElement("div");
 				innerDiv.appendChild(Name);
 				innerDiv.appendChild(document.createElement("br"));
+				innerDiv.appendChild(document.createElement("br"));
 				innerDiv.appendChild(joined);
 				innerDiv.appendChild(document.createElement("br"));
+				innerDiv.appendChild(document.createElement("br"));
 				innerDiv.appendChild(Followers);
+				innerDiv.appendChild(document.createElement("br"));
+				innerDiv.appendChild(document.createElement("br"));
 				innerDiv.appendChild(OverallRating);
+				innerDiv.appendChild(document.createElement("br"));
+				innerDiv.appendChild(document.createElement("br"));
+				innerDiv.appendChild(Positive);
+				innerDiv.appendChild(document.createElement("br"));
+				innerDiv.appendChild(document.createElement("br"));
+				innerDiv.appendChild(Negative);
+				innerDiv.appendChild(document.createElement("br"));
+				innerDiv.appendChild(document.createElement("br"));
+				innerDiv.appendChild(Neutral);
 				bodyDiv.appendChild(innerDiv);
-				var outer = document.createElement("ul");
+				/*var outer = document.createElement("ul");
 				outer.classList.add("bar-graph");
 				var liForPositive = document.createElement("li");
 				liForPositive.classList.add("bar", "success");
@@ -78,7 +98,10 @@ document.getElementById("getUsernames").addEventListener("click", () => {
 				outer.appendChild(liForPositive);
 				outer.appendChild(liForNegative);
 				outer.appendChild(liForNeutral);
-				bodyDiv.appendChild(outer);
+				bodyDiv.appendChild(outer);*/
+
+				
+
 			}
 			let check = 0;
 			document.getElementById(
