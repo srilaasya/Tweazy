@@ -16,21 +16,22 @@ An extension downloadable through our [website](https://tweazy.herokuapp.com) wh
 - Performs sentiment analysis and returns an overall sentiment score along with a sentiment graph showing number of positive, neutral and negative tweets
 - Gives additional insights on on the number of followers and friends, and the time at which the account was created
 
-## :star: Install dependencies
-- Run the command `npm i && pip install -r requirements.txt && node index.js` in your terminal to install dependencies
-- This command will install Python and Node dependencies and will also start the server locally. You can now proceed to install the extension
+## :star: Install dependencies and run the local server
+- Run the command `npm i && pip install -r requirements.txt && node index.js` in your terminal to install dependencies and start the local server.
+- This command will install Python and Node.js dependencies, after which, it will also start the server locally.
+- You can now proceed to install the extension as mentioned in the next section.
 
-## :star: Installation
+## :star: Extension installation
 - Download the extension from [here](https://tweazy.herokuapp.com).
-- Unzip the file once downloaded.
-- Open Google Chrome and click on the extensions icon
-- Click on `Manage Extensions` at the end of the pop up
+- Unzip the file once downloaded and take note of the location.
+- Open Google Chrome and go to `chrome://extensions`.
 - Turn on the `Developer Mode` on the top right corner.
-- Now select `Load Unpacked` from the left corner and select the `extension` folder from the unzipped file you downloaded
-- You should be able to see Tweazy extension now
+- Now select `Load Unpacked` from the left corner and select the `extension` folder from the unzipped file you downloaded.
+- You should be able to see Tweazy extension now.
+- You can now proceed to the next section on how to use the extension.
 
 ## :star: Usage
-- Open up any twitter page
-- Click on the extension
-- Select the username you wish to analyze
+- Open up any twitter page / profile.
+- Click on the extension.
+- Select the username you wish to analyze.
 - Voila! On the screen are your results!
