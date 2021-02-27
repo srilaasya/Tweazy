@@ -16,6 +16,10 @@ An extension downloadable through our [website](https://tweazy.herokuapp.com) wh
 - Performs sentiment analysis and returns an overall sentiment score along with a sentiment graph showing number of positive, neutral and negative tweets
 - Gives additional insights on on the number of followers and friends, and the time at which the account was created
 
+## :star: Install dependencies
+- Run the command `npm i && pip install -r requirements.txt && node index.js` in your terminal to install dependencies
+- This command will install Python and Node dependencies and will also start the server locally. You can now proceed to install the extension
+
 ## :star: Installation
 - Download the extension from [here](https://tweazy.herokuapp.com).
 - Unzip the file once downloaded.
