@@ -1,7 +1,7 @@
 certifi==2020.12.5
 chardet==4.0.0
 expertai-nlapi==2.2.0
-idna==2.10
+idna==3.1
 oauthlib==3.1.0
 PySocks==1.7.1
 python-dotenv==0.17.0
