@@ -4,7 +4,7 @@ expertai-nlapi==2.1.3
 idna==2.10
 oauthlib==3.1.0
 PySocks==1.7.1
-python-dotenv==0.15.0
+python-dotenv==0.17.0
 requests==2.25.1
 requests-oauthlib==1.3.0
 six==1.15.0
