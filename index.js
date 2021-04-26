@@ -39,7 +39,7 @@ app.post("/getRating", (req, res) => {
 	);
 	let pythonOutput;
 	console.log("Username from extension is",req.body.username)
-	const python = spawn("python", ["get_rating.py", req.body.username]);
+	const python = spawn("python3", ["get_rating.py", req.body.username]);
 	python.stdout.on("data", (data) => {
 		pythonOutput = data.toString();
 	});
