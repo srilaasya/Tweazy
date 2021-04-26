@@ -47,11 +47,11 @@ document.getElementById("getUsernames").addEventListener("click", () => {
 				var OverallRating = document.createElement("h5");
 				OverallRating.innerText = "Overall Sentiment Score: "+overall;
 				var Positive = document.createElement("h4");
-				Name.innerText = "Positive: " + pos;
+				Positive.innerText = "Positive: " + pos;
 				var Negative = document.createElement("h4");
-				Name.innerText = "Negative: " + neg;
+				Negative.innerText = "Negative: " + neg;
 				var Neutral = document.createElement("h4");
-				Name.innerText = "Neutral: " + neutral;
+				Neutral.innerText = "Neutral: " + neutral;
 				var innerDiv = document.createElement("div");
 				innerDiv.appendChild(Name);
 				innerDiv.appendChild(document.createElement("br"));
